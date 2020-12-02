@@ -1,0 +1,10 @@
+kukaprc_project.xml
+- the original file generated from KUKA PRC
+
+v2kukaprc_project.xml
+- original file gave axis violation errors in -5 and -6
+- this was an attempt to shorten and remove those errors. was not successful 
+
+v3kukaprc_project.xml
+- this file removed all ptp and lin motions and kept axis
+- rotate a04 joint from -90 to 0 to -90 and this was successful

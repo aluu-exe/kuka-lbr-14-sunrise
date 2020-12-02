@@ -1,0 +1,4 @@
+This is for the KUKA desktop login: 
+
+user: KukaUser
+pass: 68kuka1secpw59
