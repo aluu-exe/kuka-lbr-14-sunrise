@@ -60,8 +60,8 @@ public class PRC_RunXML extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		LBR robot = lbr_iiwa; //SET ROBOT
-		String toolname = "ToolTemplate"; //SET TOOL NAME
-		String tcpname = "ToolTemplate"; //SET TCP NAME -- this is useless, fixed in PRC_CORE.java line 123
+		String toolname = "Tool"; //SET TOOL NAME
+		String tcpname = "CutterFrame"; //SET TCP NAME -- this is useless, fixed in PRC_CORE.java line 123
 
 		// try this next:
 		ObjectFrame baseFrame = getApplicationData().getFrame("/Base"); //OPTIONAL: SET BASE COORDINATE SYSTEM
