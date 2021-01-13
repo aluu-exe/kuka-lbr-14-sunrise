@@ -110,9 +110,6 @@ public class PRC_CORE {
 	
 	public void CORE_RUN(PRC_XMLOUT xmlout, LBR robot, Controller kuka_Sunrise_Cabinet_1, SpatialObject tool, String tcpname, ObjectFrame baseFrame, boolean enablelogging, MobilePlatform miiwa, IApplicationData AppData, AbstractIOGroup ioGroup, IApplicationUI iApplicationUI) {
 	// public void CORE_RUN(PRC_XMLOUT xmlout, LBR robot, Controller kuka_Sunrise_Cabinet_1, SpatialObject tool, String tcpname, ObjectFrame baseFrame, boolean enablelogging, ITaskLogger logger, MobilePlatform miiwa, IApplicationData AppData, AbstractIOGroup ioGroup) {
-		
-		iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "in CORE_RUN", "OK");
-		
 		if (ioGroup != null){
 		digiogroup = new PRC_IOGroupExtended(ioGroup, kuka_Sunrise_Cabinet_1, PRC_Enums.DIGOUT);
 		aniogroup = new PRC_IOGroupExtended(ioGroup, kuka_Sunrise_Cabinet_1, PRC_Enums.ANOUT);
@@ -320,11 +317,10 @@ public class PRC_CORE {
 		int k = 0;
 		
 		for (PRC_CommandData cmd : cmdsmod) {
-			iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "k = " + Integer.toString(k) + "	, cmd = " + cmd.prccmdType, "OK");
+			// iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "k = " + Integer.toString(k) + "	, cmd = " + cmd.prccmdType, "OK");
 			
 			if (k>3)
 			{
-				iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "k>3", "OK");
 				while (!motionContainers.get(k-3).isFinished())
 					ThreadUtil.milliSleep(50);
 			}
@@ -345,12 +341,10 @@ public class PRC_CORE {
 				
 				if (cmd.axisMove.interpolation == ""){
 					robot.move(ptp(cmd.axisMove.axispos).setJointVelocityRel(cmd.axisMove.vel).setJointAccelerationRel(ptpacc));
-					iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "robot.move", "OK");
 				}else{
 					IMotionContainer mc = robot.moveAsync(ptp(cmd.axisMove.axispos).setJointVelocityRel(cmd.axisMove.vel).setJointAccelerationRel(ptpacc).setBlendingCart(ptpint));
 					motionContainers.add(mc);
 					k++;
-					iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "motionContainers", "OK");
 				}
 				
 				if (enablelogging){
@@ -597,7 +591,7 @@ public class PRC_CORE {
 				}
 			} 
 			
-//			iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "done stuff", "OK");
+			iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "done stuff", "OK");
 		}
 		
 
