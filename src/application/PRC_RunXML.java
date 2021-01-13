@@ -66,7 +66,7 @@ public class PRC_RunXML extends RoboticsAPIApplication {
 		// try this next:
 		ObjectFrame baseFrame = getApplicationData().getFrame("/Base"); //OPTIONAL: SET BASE COORDINATE SYSTEM
 		// ObjectFrame baseFrame = null;
-		boolean enablellogging = false; //OPTIONAL: ENABLE CONSOLE LOGGING
+		boolean enablellogging = true; //OPTIONAL: ENABLE CONSOLE LOGGING
 		AbstractIOGroup iogrp = null; // = new BeckhoffIOIOGroup(kuka_Sunrise_Cabinet_1); //OPTIONAL: SET IO GROUP
 		
 		PRC_CORE prc_Core = new PRC_CORE();

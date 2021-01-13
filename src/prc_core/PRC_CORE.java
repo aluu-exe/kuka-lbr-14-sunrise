@@ -120,11 +120,8 @@ public class PRC_CORE {
 		
 		//create tool
 		tool.attachTo(robot.getFlange());
-		actTCP = robot.getFlange();
-
-		// actTCP = tool.getFrame("ToolTemplate");
-		// actTCP = tool.getFrame("ToolTemplate (Root)"); // this returns NULL
-		// actTCP = tool.getFrame(tcpname) // this returns NULL -- causing the problem
+		// actTCP = robot.getFlange();
+		actTCP = tool.getFrame(tcpname); // this returns NULL -- causing the problem
 		
 		if (enablelogging){
 			// logger.info("Tool Created");
@@ -600,7 +597,7 @@ public class PRC_CORE {
 				}
 			} 
 			
-			iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "done stuff", "OK");
+//			iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "done stuff", "OK");
 		}
 		
 
