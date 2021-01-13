@@ -559,20 +559,11 @@ public class PRC_CORE {
 				}
 
 				if (cmd.motionBatch.isCartesian){
-					iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "cmd.motionBatch.isCartesian", "OK");
-					
 					// there is a NullPointerException at the line below
 					IMotionContainer mc = actTCP.moveAsync(cmd.motionBatch.motionBatch);
-					iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "moveAsync", "OK");
-					
 					motionContainers.add(mc);
-					iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "Adding to container", "OK");
-
 					k++;
-					iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "Increment k", "OK");
-					
 				} else {
-					iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "cmd.motionBatch NOT  Cartesian", "OK");
 					IMotionContainer mc = robot.moveAsync(cmd.motionBatch.motionBatch);
 					motionContainers.add(mc);
 					k++;
@@ -591,7 +582,6 @@ public class PRC_CORE {
 				}
 			} 
 			
-			iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "done stuff", "OK");
 		}
 		
 
@@ -601,7 +591,6 @@ public class PRC_CORE {
 		}
 		else {
 			if (motionContainers.size() > 0){
-			iApplicationUI.displayModalDialog(ApplicationDialogType.INFORMATION, "motionContainers.size() > 0", "OK");
 			while (!motionContainers.get(motionContainers.size() - 1).isFinished())
 				ThreadUtil.milliSleep(5);
 			}
