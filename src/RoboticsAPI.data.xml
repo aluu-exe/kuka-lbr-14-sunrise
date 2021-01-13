@@ -24,6 +24,11 @@
     </world>
     <objectTemplates>
         <toolTemplate class="" name="ToolTemplate">
+            <frames>
+                <frame name="Frame">
+                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="310.0"/>
+                </frame>
+            </frames>
             <additionalInformation>
                 <info key="SafetyID" type="java.lang.Integer" value="0"/>
             </additionalInformation>
